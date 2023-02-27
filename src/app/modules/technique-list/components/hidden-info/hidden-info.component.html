@@ -1,0 +1,16 @@
+<div class="container">
+  <button class="button" mat-button (click)="onClsOpnClick($event)">
+    <div class="button__wrapper">
+      <div class="button__icon" [ngClass]="{'active': isHidden}">
+        <mat-icon svgIcon="arrow-down"></mat-icon>
+      </div>
+      <div class="button__text" [ngSwitch]="isHidden">
+        <div *ngSwitchCase="true">Подробнее</div>
+        <div *ngSwitchCase="false">Свернуть</div>
+      </div>
+    </div>
+  </button>
+  <div class="hidden-text" [ngClass]="{'hidden': isHidden}">
+    <ng-content select="[hidden-text]"></ng-content>
+  </div>
+</div>
