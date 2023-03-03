@@ -11,10 +11,10 @@ export class IconService {
     private _matIconRegistry: MatIconRegistry,
     private _domSanitizer: DomSanitizer
   ) {
-    console.log('text')
-    this._matIconRegistry.addSvgIcon(
-      "arrow-down",
-      this._domSanitizer.bypassSecurityTrustResourceUrl("assets/icons/arrow-down.svg")
-    );
+    // console.log('text')
+    // this._matIconRegistry.addSvgIcon(
+    //   "arrow-down",
+    //   this._domSanitizer.bypassSecurityTrustResourceUrl("assets/icons/arrow-down.svg")
+    // );
   }
 }

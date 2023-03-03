@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatIconModule} from '@angular/material/icon';
 
 import { TechniqueListRoutingModule } from './technique-list-routing.module';
@@ -10,6 +11,7 @@ import { HiddenInfoComponent } from './components/hidden-info/hidden-info.compon
 import {ClickOutsideDirective} from "../../directives/click-outside.directive";
 import {HttpClient} from "@angular/common/http";
 import {MatButtonModule} from "@angular/material/button";
+import {TechniqueService} from "./service/technique-service.service";
 
 @NgModule({
   declarations: [
@@ -24,7 +26,8 @@ import {MatButtonModule} from "@angular/material/button";
     TechniqueListRoutingModule,
     MatIconModule,
     MatButtonModule,
+    MatCheckboxModule,
   ],
-  providers: [HttpClient]
+  providers: [HttpClient, TechniqueService]
 })
 export class TechniqueListModule { }

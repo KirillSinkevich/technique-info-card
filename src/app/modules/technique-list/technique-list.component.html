@@ -1,2 +1,104 @@
-<p>List: </p>
-<app-card *ngFor="let card of cards"></app-card>
+<div class="container-column">
+<!--<div class="container-row">-->
+  <div>
+    <app-card *ngFor="let transport of transports | async"
+              [data]="transport"
+              [cardType]="cardTypeEnum.Transport">
+      <ng-container *ngTemplateOutlet="transportMainInfoTemplate; context: {transport: transport}" mainInfo></ng-container>
+      <ng-container *ngTemplateOutlet="additionalText; context: {data: transport}" addInfo></ng-container>
+    </app-card>
+  </div>
+  <div>
+    <app-card *ngFor="let sparePart of spareParts | async"
+              [data]="sparePart"
+              [cardType]="cardTypeEnum.SpareParts">
+      <ng-container *ngTemplateOutlet="sparePartsMainInfoTemplate; context: {sparePart: sparePart}" mainInfo></ng-container>
+      <ng-container *ngTemplateOutlet="additionalText; context: {data: sparePart}" addInfo></ng-container>
+    </app-card>
+  </div>
+  <div>
+    <app-card *ngFor="let oil of oils | async"
+              [data]="oil"
+              [cardType]="cardTypeEnum.Oil">
+      <ng-container *ngTemplateOutlet="oilMainInfoTemplate; context: {oil: oil}" mainInfo></ng-container>
+      <ng-container *ngTemplateOutlet="additionalText; context: {data: oil}" addInfo></ng-container>
+    </app-card>
+  </div>
+</div>
+
+<ng-template #transportMainInfoTemplate let-data="transport">
+  <div class="row">
+    <div class="point card-name">{{data?.name}}</div>
+    <div class="point card-name bold">{{data?.numberplate}}</div>
+    <div class="point main-text">{{data?.mileage}} км</div>
+  </div>
+  <div class="row">
+    <div class="point main-text">{{data?.brand}}</div>
+    <div class="point main-text">{{data?.model}}</div>
+  </div>
+  <div class="row">
+    <div class="point add-text">Год выпуска: {{data?.yearOfCreate}}</div>
+    <div class="point add-text">№ {{data?.serialNumber}}</div>
+  </div>
+</ng-template>
+
+<ng-template #sparePartsMainInfoTemplate let-data="sparePart">
+  <div class="row">
+    <div class="point card-name bold">{{data?.name}}</div>
+  </div>
+  <div class="row">
+    <div class="point add-text">{{data?.brand}}</div>
+    <div class="point add-text">{{data?.model}}</div>
+    <div class="point main-text">№ {{data?.serialNumber}}</div>
+  </div>
+  <div class="row">
+    <div class="point add-text">Объем системы смазки: {{data?.value}} л</div>
+  </div>
+</ng-template>
+
+<ng-template #oilMainInfoTemplate let-data="oil">
+  <div class="row">
+    <div class="point card-name bold">{{data?.condition === 'new' ? 'Проба свежего СМ' : 'Проба работающего СМ'}}</div>
+    <div class="point add-text bold">Обработка</div>
+  </div>
+  <div class="row">
+    <div class="icon"><mat-icon svgIcon="sample"></mat-icon></div>
+    <div class="point main-text">Внутренний №: {{data?.serialNumber}}</div>
+  </div>
+  <div class="row">
+    <div class="icon"><mat-icon svgIcon="calendar"></mat-icon></div>
+    <div class="point main-text">Дата отбора СМ: {{data?.getData}}</div>
+  </div>
+  <div class="row">
+    <div class="icon"><mat-icon svgIcon="calendar"></mat-icon></div>
+    <div class="point main-text">Дата отправки в лаб.: {{data?.departureDate}} км</div>
+  </div>
+</ng-template>
+
+<ng-template #additionalText let-data=data>
+  <app-hidden-info *ngIf="data?.additionalInfo">
+    <div hidden-text>
+      <ng-container [ngSwitch]="isString(data)">
+        <ng-container *ngSwitchCase="true">
+          <div class="row">
+            {{data.additionalInfo}}
+          </div>
+        </ng-container>
+        <ng-container *ngSwitchCase="false">
+          <div class="row">
+            <div class="icon"><mat-icon svgIcon="sample"></mat-icon></div>
+            <div class="point main-text">Лабораторный №: {{data?.additionalInfo?.labNumber}}</div>
+          </div>
+          <div class="row">
+            <div class="icon"><mat-icon svgIcon="add-oil"></mat-icon></div>
+            <div class="point main-text">Кол-во долитого СМ: {{data?.additionalInfo?.addedValue}}</div>
+          </div>
+          <div class="row">
+            <div class="icon"><mat-icon svgIcon="link"></mat-icon></div>
+            <div class="point main-text">Принадлежность пробы: {{data?.additionalInfo?.accessory}}</div>
+          </div>
+        </ng-container>
+      </ng-container>
+    </div>
+  </app-hidden-info>
+</ng-template>

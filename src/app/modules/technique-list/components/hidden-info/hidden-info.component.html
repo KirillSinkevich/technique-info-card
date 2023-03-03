@@ -1,7 +1,7 @@
 <div class="container">
   <button class="button" mat-button (click)="onClsOpnClick($event)">
     <div class="button__wrapper">
-      <div class="button__icon" [ngClass]="{'active': isHidden}">
+      <div class="button__icon" [ngClass]="{'hidden': !isHidden}">
         <mat-icon svgIcon="arrow-down"></mat-icon>
       </div>
       <div class="button__text" [ngSwitch]="isHidden">

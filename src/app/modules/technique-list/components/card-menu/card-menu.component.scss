@@ -1,0 +1,41 @@
+@import 'src/assets/variables/colors';
+
+.row {
+  display: flex;
+  align-items: center;
+
+  &::ng-deep {
+    & .elem {
+      cursor: pointer;
+    }
+
+    & .icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: $card-bg-1;
+      width: 24px;
+      height: 24px;
+      transition: filter 0.3s ease-in-out;
+
+      &:hover {
+        filter: brightness(95%);
+
+        & mat-icon {
+          color: $card-border-focus;
+        }
+      }
+
+      & mat-icon {
+        display: flex;
+        width: 14px;
+        height: 14px;
+        transition: color 0.3s ease-in-out;
+      }
+
+      & + .icon {
+        margin-left: 8px;
+      }
+    }
+  }
+}

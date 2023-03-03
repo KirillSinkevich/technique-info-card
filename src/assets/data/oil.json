@@ -1,0 +1,77 @@
+[
+  {
+    "cardType": 3,
+    "type": "sampleNew",
+    "condition": "new",
+    "serialNumber": "PRSM-2022-0002|12|1|0",
+    "getData": "15.09.2022",
+    "departureDate": "18.09.2022",
+    "additionalInfo": {
+      "labNumber": "GPN-2022-6343456-558",
+      "addedValue": 200,
+      "accessory": "Двигатели дизельные",
+      "info": ".....",
+      "processingSpeed": 90
+    }
+  },
+   {
+     "cardType": 3,
+     "type": "sampleOld",
+     "condition": "new",
+     "serialNumber": "PRSM-2022-0002|12|1|0",
+     "getData": "15.09.2022",
+     "departureDate": "18.09.2022",
+     "additionalInfo": {
+       "labNumber": "GPN-2022-6343456-558",
+       "addedValue": 200,
+       "accessory": "Двигатели дизельные",
+       "info": ".....",
+       "processingSpeed": 90
+     }
+  },
+   {
+     "cardType": 3,
+     "type": "sampleNew",
+     "condition": "new",
+     "serialNumber": "PRSM-2022-0002|12|1|0",
+     "getData": "15.09.2022",
+     "departureDate": "18.09.2022",
+     "additionalInfo": {
+       "labNumber": "GPN-2022-6343456-558",
+       "addedValue": 200,
+       "accessory": "Двигатели дизельные",
+       "info": ".....",
+       "processingSpeed": 90
+     }
+  },
+   {
+     "cardType": 3,
+     "type": "sampleOld",
+     "condition": "new",
+     "serialNumber": "PRSM-2022-0002|12|1|0",
+     "getData": "15.09.2022",
+     "departureDate": "18.09.2022",
+     "additionalInfo": {
+       "labNumber": "GPN-2022-6343456-558",
+       "addedValue": 200,
+       "accessory": "Двигатели дизельные",
+       "info": ".....",
+       "processingSpeed": 90
+     }
+  },
+  {
+    "cardType": 3,
+    "type": "sampleNew",
+    "condition": "new",
+    "serialNumber": "PRSM-2022-0002|12|1|0",
+    "getData": "15.09.2022",
+    "departureDate": "18.09.2022",
+    "additionalInfo": {
+      "labNumber": "GPN-2022-6343456-558",
+      "addedValue": 200,
+      "accessory": "Двигатели дизельные",
+      "info": ".....",
+      "processingSpeed": 90
+    }
+  }
+]

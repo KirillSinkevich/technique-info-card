@@ -5,11 +5,42 @@
      (clickOutside)="onClickOutside()"
 >
   <div class="label"></div>
-  <div class="icon"></div>
-  <div class="main-info">
-    <app-hidden-info>
-      <div hidden-text *ngFor="let val of [1,1,1,1,1,1,1]">{{val}} some text</div>
-    </app-hidden-info>
+  <div class="card-icon">
+    <mat-icon [svgIcon]="data.type"></mat-icon>
   </div>
-  <div class="additional-info"></div>
+  <div class="main-info">
+    <ng-content select="[mainInfo]"></ng-content>
+    <div class="tech-details" *ngIf="data?.cardType === 1 || data?.cardType === 2" (click)="onMoreClick($event)">
+      <mat-icon svgIcon="info"></mat-icon>
+      <span class="tech-details__text" [ngSwitch]="data.cardType">
+        <div *ngSwitchCase="1">Подробно о технике</div>
+        <div *ngSwitchCase="2">Подробно об узле</div>
+        <div *ngSwitchDefault></div>
+      </span>
+    </div>
+    <ng-content select="[addInfo]"></ng-content>
+  </div>
+  <div class="additional-info">
+    <app-card-menu [cardType]="data.cardType"></app-card-menu>
+    <div class="info-about-tech" *ngIf="data.cardType === 1">
+      <ng-container [ngSwitch]="!!getSampleOrUnitCount()">
+        <ng-container *ngSwitchCase="false">
+          <div class="add point">
+            <div class="icon"><mat-icon svgIcon="reducer"></mat-icon></div>
+            <div>Добавить узлы</div>
+          </div>
+        </ng-container>
+        <ng-container *ngSwitchCase="true">
+          <div class="info point">
+            <div class="icon"><mat-icon svgIcon="reducer"></mat-icon></div>
+            <div>{{getUnitCount()}} Узел</div>
+          </div>
+          <div class="info point">
+            <div class="icon"><mat-icon svgIcon="sample"></mat-icon></div>
+            <div>{{getSampleCount()}} Пробы</div>
+          </div>
+        </ng-container>
+      </ng-container>
+    </div>
+  </div>
 </div>

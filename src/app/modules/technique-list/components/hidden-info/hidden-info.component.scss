@@ -1,3 +1,5 @@
+@import '../../../../../assets/variables/colors';
+
 .container {
   display: flex;
   flex-direction: column;
@@ -6,7 +8,7 @@
 
 .button {
   padding: 0;
-  height: 16px;
+  height: 20px;
 
   &__wrapper {
     display: flex;
@@ -18,20 +20,44 @@
   &__icon {
     margin-right: 8px;
     transition: all 0.3s ease-in-out;
-    &.active {
+
+    &.hidden {
       transform-origin: center center;
       transform: rotate(180deg);
-      //transform-style: preserve-3d;
     }
 
     & mat-icon {
+      display: flex;
       width: 16px;
       height: 16px;
+      color: $text-additional;
     }
   }
 
   &__text {
     font-size: 14px;
     font-weight: normal;
+    color: $text-additional;
   }
 }
+
+.hidden-text {
+  max-height: 150px;
+  transition: 0.3s ease-in-out;
+  overflow: hidden;
+
+  &.hidden {
+    max-height: 0;
+  }
+}
+
+.mat-mdc-button::ng-deep {
+  & .mat-mdc-button-touch-target {
+    height: 20px;
+  }
+
+  & .mat-mdc-button-persistent-ripple {
+    display: none;
+  }
+}
+

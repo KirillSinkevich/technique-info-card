@@ -1,1 +1,35 @@
-<p>card-menu works!</p>
+<ng-container [ngSwitch]="cardType">
+  <div class="row" *ngSwitchCase="1">
+    <div class="icon add-text elem">
+      <mat-icon svgIcon="file"></mat-icon>
+    </div>
+    <div class="icon add-text elem">
+      <mat-icon svgIcon="edit"></mat-icon>
+    </div>
+    <mat-checkbox class="elem"></mat-checkbox>
+  </div>
+  <div class="row" *ngSwitchCase="2">
+    <div class="icon add-text elem">
+      <mat-icon svgIcon="edit"></mat-icon>
+    </div>
+    <mat-checkbox class="elem"></mat-checkbox>
+  </div>
+  <div class="row" *ngSwitchCase="3">
+    <div class="icon elem">
+      <mat-icon svgIcon="pdf"></mat-icon>
+    </div>
+    <div class="icon elem">
+      <mat-icon svgIcon="xls"></mat-icon>
+    </div>
+    <div class="icon add-text elem">
+      <mat-icon svgIcon="download"></mat-icon>
+    </div>
+    <div class="icon add-text elem">
+      <mat-icon svgIcon="file"></mat-icon>
+    </div>
+    <div class="icon add-text elem">
+      <mat-icon svgIcon="edit"></mat-icon>
+    </div>
+    <mat-checkbox class="elem" (click)="onClickBox($event)"></mat-checkbox>
+  </div>
+</ng-container>

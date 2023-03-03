@@ -1,0 +1,47 @@
+[
+  {
+    "cardType": 2,
+    "type": "transmission",
+    "name": "АКПП",
+    "brand": "Камаз",
+    "model": "OEM TYR111",
+    "serialNumber": 4251895,
+    "value": 200
+  },
+  {
+    "cardType": 2,
+    "type": "engine",
+    "name": "Двигатель",
+    "brand": "Камаз",
+    "model": "OEM TYR111",
+    "serialNumber": 4251895,
+    "value": 200
+  },
+  {
+    "cardType": 2,
+    "type": "differential",
+    "name": "Мост",
+    "brand": "Камаз",
+    "model": "OEM TYR111",
+    "serialNumber": 4251895,
+    "value": 200
+  },
+  {
+    "cardType": 2,
+    "type": "reducer",
+    "name": "Редуктор",
+    "brand": "Камаз",
+    "model": "OEM TYR111",
+    "serialNumber": 4251895,
+    "value": 200
+  },
+  {
+    "cardType": 2,
+    "type": "hydraulics",
+    "name": "Гидравлика",
+    "brand": "Камаз",
+    "model": "OEM TYR111",
+    "serialNumber": 4251895,
+    "value": 200
+  }
+]

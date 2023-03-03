@@ -2,9 +2,8 @@
 
 .card {
   display: flex;
-  width: 640px;
-  min-height: 190px; // todo delete this line
-  padding: 12px 16px;
+  width: 584px;
+  padding: 10px 16px;
   border: 2px solid $card-border;
   border-radius: 4px;
   position: relative;
@@ -39,14 +38,118 @@
   background-color: $card-border;
 }
 
-.icon {
-  flex: 1 0 30px;
+.card-icon {
+  flex: 0 0 24px;
+  margin-right: 10px;
+
+  & mat-icon {
+    display: flex;
+    width: 24px;
+    color: $text-additional;
+  }
 }
 
 .main-info {
   flex: 3 0 300px;
+  &::ng-deep .row {
+    display: flex;
+    font-size: 14px;
+
+    & + .row {
+      margin-top: 5px;
+    }
+
+    & .point {
+      & + .point {
+        margin-left: 10px;
+      }
+    }
+
+    & mat-icon {
+      display: flex;
+      width: 16px;
+      height: 16px;
+      color: $text-additional;
+      margin-right: 5px;
+    }
+  }
+
+  &::ng-deep app-hidden-info > div{
+    margin-top: 10px;
+  }
 }
 
 .additional-info {
-  flex: 1 0 100px;
+  flex: 1 0 150px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-between;
+
+  &::ng-deep .info-about-tech {
+    display: flex;
+
+    & .point {
+      display: flex;
+      align-items: center;
+      font-size: 14px;
+      cursor: pointer;
+
+      & .icon {
+        display: flex;
+        width: 14px;
+        height: 14px;
+        margin-right: 5px;
+      }
+
+      & + .point {
+        margin-left: 5px;
+      }
+    }
+
+    & .add {
+      color: $text-info;
+      & mat-icon {
+        display: flex;
+        width: 14px;
+        height: 14px;
+      }
+    }
+
+    & .info {
+      color: $text-additional-hover;
+      & mat-icon {
+        display: flex;
+        width: 14px;
+        height: 14px;
+      }
+    }
+  }
+}
+
+.tech-details {
+  display: flex;
+  align-items: baseline;
+  transition: color 0.3s ease-in-out;
+  cursor: pointer;
+  margin: 10px 0;
+
+  &:hover {
+    & mat-icon, .tech-details__text {
+      color: $text-additional-hover;
+    }
+  }
+
+  & mat-icon {
+    display: flex;
+    width: 14px;
+    height: 14px;
+    color: $text-additional;
+  }
+
+  &__text {
+    color: $text-additional;
+    font-size: 14px;
+    margin-left: 8px;
+  }
 }

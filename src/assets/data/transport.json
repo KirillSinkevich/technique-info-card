@@ -1,0 +1,42 @@
+[
+  {
+    "cardType": 1,
+    "type": "truck",
+    "name": "Грузовик",
+    "numberplate": "Р100ТТ 799",
+    "mileage": 2000,
+    "brand": "Scania",
+    "model": "TT280",
+    "serialNumber": 890,
+    "yearOfCreate": 2018,
+    "unit": 1,
+    "sample": 3,
+    "additionalInfo": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla malesuada rutrum sapien, eu tempor dolor bibendum eu. Mauris ullamcorper arcu in porta faucibus. In tellus orci, laoreet accumsan dapibus egestas, lacinia a enim. Aenean nec consequat libero. Curabitur commodo rutrum mattis. Maecenas cursus tortor eget eros efficitur hendrerit. Donec tristique augue ac lectus convallis, in ultricies dui viverra."
+  },
+  {
+    "cardType": 1,
+    "type": "truck",
+    "name": "Грузовик",
+    "numberplate": "Р100ТТ 799",
+    "mileage": 2000,
+    "brand": "Scania",
+    "model": "TT280",
+    "serialNumber": 890,
+    "yearOfCreate": 2018,
+    "unit": 1,
+    "sample": 3
+  },
+  {
+    "cardType": 1,
+    "type": "truck",
+    "name": "Грузовик",
+    "numberplate": "Р100ТТ 799",
+    "mileage": 2000,
+    "brand": "Scania",
+    "model": "TT280",
+    "serialNumber": 890,
+    "yearOfCreate": 2018,
+    "unit": 0,
+    "sample": 0
+  }
+]

@@ -1,4 +1,23 @@
 /* You can add global styles to this file, and also import other style files */
+@import 'assets/variables/colors';
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Tahoma, "Helvetica Neue", sans-serif; }
+
+button { font-family: Tahoma, "Helvetica Neue", sans-serif!important; }
+
+.main-text {
+  color: $text-main;
+}
+
+.add-text {
+  color: $text-additional;
+}
+
+.card-name {
+  color: $card-name;
+}
+
+.bold {
+  font-weight: bold;
+}
